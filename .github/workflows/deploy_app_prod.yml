@@ -1,0 +1,11 @@
+name: deploy app to production
+on:
+  push:
+    tags:
+      - deploy/app/prod/v*
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to Firebase
+        uses: w9jds/firebase-action@master
